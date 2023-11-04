@@ -1,11 +1,11 @@
 import logo from './../assets/logo.png';
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import {  NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import defaultUser from "./../assets/avater.png";
 
 const Navbar = () => {
-    
+
     const { user, logOut } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -63,45 +63,51 @@ const Navbar = () => {
                                 Home
                             </NavLink>
 
-                            <NavLink
-                                exact
-                                to="/login"
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/login") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
-                            >
-                                LogIn
-                            </NavLink>
+                            {
+                                !user && <NavLink
+                                    exact
+                                    to="/login"
+                                    className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/login") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                >
+                                    LogIn
+                                </NavLink>
+                            }
 
                             <NavLink
                                 exact
-                                to="/addProduct"
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/addProduct") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                to='/assignment'
+                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive('/assignment') ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
                             >
                                 Assignments
                             </NavLink>
 
-                            <NavLink
-                                exact
-                                to={`/myCart`}
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/brandDetails") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
-                            >
-                                Create Assignments
-                            </NavLink>
+                            {
+                                user?.email && <>
+                                    <NavLink
+                                        exact
+                                        to="/createassignment"
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/createassignment") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                    >
+                                        Create Assignments
+                                    </NavLink>
 
-                            <NavLink
-                                exact
-                                to={`/myCart`}
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/brandDetails") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
-                            >
-                                My Assignments
-                            </NavLink>
+                                    <NavLink
+                                        exact
+                                        to=""
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                    >
+                                        My Assignments
+                                    </NavLink>
 
-                            <NavLink
-                                exact
-                                to={`/myCart`}
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/brandDetails") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
-                            >
-                                Submitted Assignments
-                            </NavLink>
+                                    <NavLink
+                                        exact
+                                        to=""
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                    >
+                                        Submitted Assignments
+                                    </NavLink>
+                                </>
+                            }
 
 
                         </div>

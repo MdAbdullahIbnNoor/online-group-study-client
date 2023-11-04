@@ -2,10 +2,11 @@ import { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-// import image from "../../assets/signup.png";
+import image from "../../assets/signup.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
@@ -56,10 +57,10 @@ const SignUp = () => {
 
   return (
     <div className=' lg:mb-[200px] lg:mt-4 lg:min-h-[400px] lg:my-14 my-8'>
-      <h2 className='text-3xl lg:text-5xl font-bold text-center mb-24 text-gray-700'>Please <span className='text-[#0ABF68]'>Register</span></h2>
+      <h2 className='text-3xl lg:text-5xl font-bold text-center mb-24 text-gray-700'>Please <span className='text-primary'>Register</span></h2>
       <div className='flex flex-col-reverse lg:flex-row items-center max-w-screen-2xl justify-around mx-auto'>
         <div className="flex flex-col w-96 lg:w-1/3 px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800">
-          <div className="self-center mb-5 text-2xl text-gray-800 sm:text-2xl dark:text-white font-semibold">
+          <div className="self-center mb-5 lg:text-2xl text-gray-800 text-2xl dark:text-white font-semibold">
             Create a new account
           </div>
           <span className="justify-center text-center text-gray-500 flex-items-center dark:text-gray-400">
@@ -125,7 +126,7 @@ const SignUp = () => {
               <div className="flex w-full my-4">
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-[#0ABF68] hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                  className="py-2 px-4 bg-primary hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                 >
                   Login
                 </button>

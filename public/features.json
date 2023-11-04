@@ -1,0 +1,53 @@
+{
+    "features": [
+      {
+        "Feature": "Create Assignments",
+        "Description": "Users can easily create assignments, specifying details like title, description, marks, difficulty level, and due date."
+      },
+      {
+        "Feature": "Manage Assignments",
+        "Description": "Users can manage their assignments, including creating, updating, and deleting them as needed."
+      },
+      {
+        "Feature": "Individual Assignments",
+        "Description": "Users can browse and take assignments as individuals, filtering based on difficulty levels, and viewing assignment details."
+      },
+      {
+        "Feature": "Submit and Grade",
+        "Description": "Users can submit their assignments and grade their friends' assignments, providing marks and feedback."
+      },
+      {
+        "Feature": "Secure Authentication",
+        "Description": "User accounts are protected with secure authentication methods, including email/password and social logins (e.g., Google and GitHub)."
+      },
+      {
+        "Feature": "Grade Submissions",
+        "Description": "Users can easily mark submitted assignments, helping maintain a transparent and organized grading system."
+      },
+      {
+        "Feature": "Responsive UI",
+        "Description": "The application offers a fully responsive design, ensuring a seamless experience on various devices."
+      },
+      {
+        "Feature": "Pagination",
+        "Description": "All assignments are organized with pagination for easy navigation and accessibility."
+      },
+      {
+        "Feature": "Error Handling",
+        "Description": "The application includes robust error handling to ensure smooth user interactions and proper feedback in case of issues."
+      },
+      {
+        "Feature": "PDF Preview",
+        "Description": "Users can preview PDF submissions directly within the application, making it convenient to review assignments."
+      },
+      {
+        "Feature": "Token Security",
+        "Description": "The application employs JWT tokens for secure user authentication and authorization on private routes."
+      },
+      {
+        "Feature": "Engaging Animations",
+        "Description": "The application features engaging animations to enhance the user experience."
+      }
+    ]
+  }
+  

@@ -58,7 +58,7 @@ const Navbar = () => {
                             <NavLink
                                 exact
                                 to="/"
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                             >
                                 Home
                             </NavLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
                                 !user && <NavLink
                                     exact
                                     to="/login"
-                                    className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/login") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                    className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/login") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                                 >
                                     LogIn
                                 </NavLink>
@@ -76,7 +76,7 @@ const Navbar = () => {
                             <NavLink
                                 exact
                                 to='/assignment'
-                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive('/assignment') ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive('/assignment') ? "text-white bg-indigo-600" : "text-gray-600"}`}
                             >
                                 Assignments
                             </NavLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
                                     <NavLink
                                         exact
                                         to="/createassignment"
-                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/createassignment") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/createassignment") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                                     >
                                         Create Assignments
                                     </NavLink>
@@ -94,7 +94,7 @@ const Navbar = () => {
                                     <NavLink
                                         exact
                                         to=""
-                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                                     >
                                         My Assignments
                                     </NavLink>
@@ -102,7 +102,7 @@ const Navbar = () => {
                                     <NavLink
                                         exact
                                         to=""
-                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-[#2d0774]" : "text-gray-600"}`}
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                                     >
                                         Submitted Assignments
                                     </NavLink>
@@ -124,7 +124,7 @@ const Navbar = () => {
                             </button>
 
                             {
-                                user && <button onClick={() => handleSignOut()} className="btn btn-primary btn-outline h-10 hidden mx-4 text-gray-600 lg:block  hover:bg-[#2d0774] focus:outline-none" aria-label="show notifications">
+                                user && <button onClick={() => handleSignOut()} className="btn btn-primary btn-outline h-10 hidden mx-4 text-gray-600 lg:block  hover:bg-indigo-600 focus:outline-none" aria-label="show notifications">
                                     Logout
                                 </button>
                             }

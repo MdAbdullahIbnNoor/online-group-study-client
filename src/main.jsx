@@ -11,7 +11,7 @@ import AuthProvider from './providers/AuthProvider';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-screen-2xl mx-auto'>
+  <div>
     <React.StrictMode>
       <AuthProvider>
         <RouterProvider router={router} />

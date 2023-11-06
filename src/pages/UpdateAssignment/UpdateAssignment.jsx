@@ -1,49 +1,52 @@
 import { useContext, useState } from 'react'
 import axios from 'axios';
 import { AuthContext } from '../../providers/AuthProvider';
+import { useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const CreateAssignment = () => {
-    const { user } = useContext(AuthContext)
+const UpdateAssignment = () => {
+    const assignment = useLoaderData();
+    const { user } = useContext(AuthContext);
 
-    const email = user?.email || '';
+    const { _id, title, description, marks, difficultyLevel, dueDate, photoURL, email } = assignment
 
-    const [formData, setFormData] = useState({
-        title: '',
-        description: '',
-        marks: '',
-        difficultyLevel: 'easy',
-        dueDate: '',
-        photoURL: '',
-        email: email, // Set email with the value obtained above
+    const [updateData, setUpdateData] = useState({
+        title,
+        description,
+        marks,
+        difficultyLevel,
+        dueDate,
+        photoURL,
+        email // New field for photo URL
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setUpdateData({ ...updateData, [name]: value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        try {
+        console.log(updateData);
+        axios.put(`http://localhost:5000/assignment/update/${_id}`, updateData)
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Assignment Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool',
+                    });
+                }
+            })
+            .catch((error) => {
+                console.error('Error updating assignment:', error);
+                // Handle errors, e.g., show an error message.
+            });
 
-            const response = await axios.post('http://localhost:5000/assignment', formData);
-            console.log('Assignment created:', response.data);
-            if (response.data.acknowledged) {
-                Swal.fire({ // Display SweetAlert on success
-                    title: 'Success!',
-                    text: 'Your data has been inserted successfully',
-                    icon: 'success',
-                    confirmButtonText: 'OK',
-                });
-            }
-            // You can add logic for success message or redirection here.
-        } catch (error) {
-            console.error('Error creating assignment:', error);
-            // Handle errors, e.g., show an error message.
-        }
-        setFormData({
+
+        setUpdateData({
             title: '',
             description: '',
             marks: '',
@@ -52,7 +55,6 @@ const CreateAssignment = () => {
             photoURL: '',
         });
     };
-
 
     return (
         <div className="flex space-x-4">
@@ -65,10 +67,11 @@ const CreateAssignment = () => {
                             type="text"
                             id="title"
                             name="title"
-                            value={formData.title}
+                            value={updateData.title}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
-                            required
+                            defaultValue={title}
+
                         />
                     </div>
                     <div>
@@ -76,7 +79,7 @@ const CreateAssignment = () => {
                         <textarea
                             id="description"
                             name="description"
-                            value={formData.description}
+                            value={updateData.description}
                             onChange={handleChange}
                             className="w-full p-2 border rounded h-24"
                         />
@@ -87,10 +90,10 @@ const CreateAssignment = () => {
                             type="number"
                             id="marks"
                             name="marks"
-                            value={formData.marks}
+                            value={updateData.marks}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
-                            required
+                            defaultValue={marks}
                         />
                     </div>
                     <div>
@@ -98,9 +101,10 @@ const CreateAssignment = () => {
                         <select
                             id="difficultyLevel"
                             name="difficultyLevel"
-                            value={formData.difficultyLevel}
+                            value={updateData.difficultyLevel}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
+                            defaultValue={difficultyLevel}
                         >
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
@@ -113,10 +117,10 @@ const CreateAssignment = () => {
                             type="date"
                             id="dueDate"
                             name="dueDate"
-                            value={formData.dueDate}
+                            value={updateData.dueDate}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
-                            required
+                            defaultValue={dueDate}
                         />
                     </div>
                     <div>
@@ -125,30 +129,30 @@ const CreateAssignment = () => {
                             type="text"
                             id="photoURL"
                             name="photoURL"
-                            value={formData.photoURL}
+                            value={updateData.photoURL}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
-                            required
+                            defaultValue={photoURL}
                         />
                     </div>
                     <button
                         type="submit"
                         className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 text-center lg:w-full mx-auto"
                     >
-                        Create Assignment
+                        Update Assignment
                     </button>
                 </form>
             </div>
             <div className="w-1/2">
                 {/* You can place your image here using an <img> tag */}
                 <img
-                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={photoURL}
                     alt="Assignment Image"
-                    className="w-full h-full rounded object-contain "
+                    className="w-[700px] h-[700px] rounded object-contain "
                 />
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default CreateAssignment;
+export default UpdateAssignment

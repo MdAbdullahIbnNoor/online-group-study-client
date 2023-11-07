@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Assignments = () => {
-  const [assignments, setAssignments] = useState([]);
+  const allData = useLoaderData()
+  const [assignments, setAssignments] = useState(allData);
   const [currentPage, setCurrentPage] = useState(1);
   const [assignmentsPerPage] = useState(6);
   const [selectedDifficulty, setSelectedDifficulty] = useState(''); // Default: Show all assignments
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/assignment').then((response) => {
-      setAssignments(response.data);
-    });
-  }, []);
+  // console.log(allData);
 
   const handleDifficultyChange = (e) => {
     setSelectedDifficulty(e.target.value);

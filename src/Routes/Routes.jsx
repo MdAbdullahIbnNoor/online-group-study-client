@@ -8,6 +8,7 @@ import Assignments from "../pages/Assignments/Assignments";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import UpdateAssignment from "../pages/UpdateAssignment/UpdateAssignment";
 import ViewAssignmentDetails from "../pages/ViewAssignmentDetails/ViewAssignmentDetails";
+import SubmittedAssignments from "../pages/SubmittedAssignment/SubmittedAssignment";
 // import BookService from "../pages/BookService/BookService";
 // import Bookings from "../pages/Bookings/Bookings";
 // import PrivateRoute from "./PrivateRoute";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             path: '/assignment/:id',  
             element: <ViewAssignmentDetails></ViewAssignmentDetails>,
             loader: ({ params }) => fetch(`http://localhost:5000/assignment/update/${params.id}`)
+        },
+        {
+            path: '/submittedAssignment',
+            element: <SubmittedAssignments></SubmittedAssignments>
         },
       ]
     },

@@ -6,7 +6,7 @@ const Assignments = () => {
   const [assignments, setAssignments] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [assignmentsPerPage] = useState(6);
-  const [sortOrder, setSortOrder] = useState('desc'); // Default sorting order
+  const [selectedDifficulty, setSelectedDifficulty] = useState(''); // Default: Show all assignments
 
   useEffect(() => {
     axios.get('http://localhost:5000/assignment').then((response) => {
@@ -14,22 +14,18 @@ const Assignments = () => {
     });
   }, []);
 
-  const toggleSortOrder = () => {
-    // Toggle sorting order
-    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+  const handleDifficultyChange = (e) => {
+    setSelectedDifficulty(e.target.value);
+    setCurrentPage(1); // Reset to the first page when difficulty level changes
   };
 
-  const sortedAssignments = [...assignments].sort((a, b) => {
-    if (sortOrder === 'asc') {
-      return a.marks - b.marks;
-    } else {
-      return assignments;
-    }
-  });
+  const filteredAssignments = selectedDifficulty
+    ? assignments.filter((assignment) => assignment.difficultyLevel === selectedDifficulty)
+    : assignments;
 
   const indexOfLastAssignment = currentPage * assignmentsPerPage;
   const indexOfFirstAssignment = indexOfLastAssignment - assignmentsPerPage;
-  const currentAssignments = sortedAssignments.slice(
+  const currentAssignments = filteredAssignments.slice(
     indexOfFirstAssignment,
     indexOfLastAssignment
   );
@@ -40,19 +36,20 @@ const Assignments = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center my-5 mx-40">
-        <button
-          onClick={toggleSortOrder}
-          className="px-4 py-2 mx-1 font-bold rounded-full bg-blue-500 text-white"
-        >
-          Sort by Marks {sortOrder === 'asc' ? '( Ascending )' : ''}
-        </button>
+      <div className="flex justify-end items-center my-5 mx-40">
+        <label className="mr-4 font-medium">Filter by Difficulty Level:</label>
+        <select className='border-2 border-indigo-600 rounded-md' value={selectedDifficulty} onChange={handleDifficultyChange}>
+          <option value="">All</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mx-40">
         {currentAssignments.map((assignment) => (
           <div
             key={assignment._id}
-            className="bg-indigo-100 rounded-xl px-6 py-8 shadow-lg max-w-sm max-h-[420px]"
+            className="bg-indigo-100 rounded-xl px-6 py-8 shadow-lg max-w-sm max-h-[400px]"
           >
             <img
               className="h-56 w-full object-cover mb-4"
@@ -60,8 +57,7 @@ const Assignments = () => {
               alt={assignment.title}
             />
             <h2 className="text-lg font-semibold">{assignment.title}</h2>
-            <p>Marks: {assignment.marks}</p>
-            <p>Difficulty Level: {assignment.difficultyLevel}</p>
+            <p>Difficulty Level: <span className='font-bold text-indigo-700 uppercase '>{assignment.difficultyLevel}</span></p>
             <div className="py-4">
               <Link to={`/assignment/${assignment._id}`}>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
@@ -78,7 +74,7 @@ const Assignments = () => {
         ))}
       </div>
       <div className="mt-4 flex justify-center">
-        {Array.from({ length: Math.ceil(sortedAssignments.length / assignmentsPerPage) }, (_, i) => (
+        {Array.from({ length: Math.ceil(filteredAssignments.length / assignmentsPerPage) }, (_, i) => (
           <button
             key={i}
             onClick={() => paginate(i + 1)}

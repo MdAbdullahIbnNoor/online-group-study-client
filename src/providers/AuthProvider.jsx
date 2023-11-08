@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import axios from 'axios';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -38,20 +39,20 @@ const AuthProvider = ({ children }) => {
             console.log('current user', currentUser);
             setLoading(false);
             // if user exists then issue a token
-            // if (currentUser) {
-            //     axios.post('', loggedUser, { withCredentials: true })
-            //         .then(res => {
-            //             console.log('token response', res.data);
-            //         })
-            // }
-            // else {
-            //     axios.post('', loggedUser, {
-            //         withCredentials: true
-            //     })
-            //         .then(res => {
-            //             console.log(res.data);
-            //         })
-            // }
+            if (currentUser) {
+                axios.post('https://online-group-study-server-nu.vercel.app/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('token response', res.data);
+                    })
+            }
+            else {
+                axios.post('https://online-group-study-server-nu.vercel.app/jwt', loggedUser, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+            }
         });
         return () => {
             return unsubscribe();

@@ -5,7 +5,7 @@ import Faq from './Faq';
 
 const Home = () => {
   return (
-    <div className='my-14'>
+    <div className='max-w-screen-2xl mx-auto'>
         <Banner></Banner>
         <FeatureSection></FeatureSection>
         <Faq></Faq>

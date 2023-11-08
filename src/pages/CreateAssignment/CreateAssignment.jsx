@@ -28,7 +28,7 @@ const CreateAssignment = () => {
         console.log(formData);
         try {
 
-            const response = await axios.post('http://localhost:5000/assignment', formData);
+            const response = await axios.post('https://online-group-study-server-nu.vercel.app/assignment', formData);
             console.log('Assignment created:', response.data);
             if (response.data.acknowledged) {
                 Swal.fire({ // Display SweetAlert on success
@@ -55,7 +55,7 @@ const CreateAssignment = () => {
 
 
     return (
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 max-w-screen-2xl mx-auto my-16">
             <div className="w-1/2">
                 <h2 className="text-2xl font-semibold mb-4">Create Assignment</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

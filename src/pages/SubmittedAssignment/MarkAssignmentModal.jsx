@@ -1,4 +1,3 @@
-// MarkAssignmentModal.js
 import React, { useContext, useState } from 'react';
 import Modal from 'react-modal';
 import axios from 'axios';
@@ -8,7 +7,7 @@ import Swal from 'sweetalert2';
 
 Modal.setAppElement('#root'); // Specify the root element for accessibility
 
-const MarkAssignmentModal = ({ assignment, handleDelete }) => {
+const MarkAssignmentModal = ({ assignment }) => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [marks, setMarks] = useState('');
@@ -28,16 +27,18 @@ const MarkAssignmentModal = ({ assignment, handleDelete }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.patch(`http://localhost:5000/myAssignment/markUpdate/${assignment._id}`, {
+      const response = await axios.patch(`https://online-group-study-server-nu.vercel.app/myAssignment/markUpdate/${assignment._id}`, {
         status: 'completed',
         markGiven: marks,
         feedBack: feedback
+      }, {
+        withCredentials: true
       });
       // console.log('Assignment submitted successfully!', response.data);
       if (response.data.acknowledged) {
         Swal.fire({
           title: 'Success!',
-          text: 'Assignment Submitted Successfully',
+          text: 'Assignment Mark Given Successfully',
           icon: 'success',
           confirmButtonText: 'Cool',
         });
@@ -53,15 +54,16 @@ const MarkAssignmentModal = ({ assignment, handleDelete }) => {
     <div>
       <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
         <div className="flex w-full space-x-2 sm:space-x-4">
-          <img className="flex-shrink-0 object-cover w-20 h-20 rounded outline-none sm:w-32 sm:h-32" src={assignment.photoURL} alt="Polaroid camera" />
+          <img className="flex-shrink-0 object-cover w-24 h-24 rounded outline-none sm:w-32 sm:h-32" src={assignment.photoURL} alt="Polaroid camera" />
           <div className="flex flex-col justify-between w-full pb-4">
             <div className="flex justify-between w-full pb-2 space-x-2">
-              <div className="space-y-1">
+              <div className="space-y-1 w-4/5">
                 <h3 className="text-lg font-semibold leadi sm:pr-8">{assignment.title}</h3>
-                <p className="text-sm ">PDF: {assignment.pdfLink}</p>
-                <p className="text-sm ">Submitted By: {assignment.submittedBy}</p>
+                <p className="text-md ">PDF: {assignment.pdfLink}</p>
+                <p className="text-md">Additional info: {assignment.additionalText}</p>
+                <p className="text-md ">Submitted By: <span className='text-indigo-700'>{assignment.submittedBy}</span></p>
               </div>
-              <div className="text-right">
+              <div className="text-right w-24">
                 <button
                   className="btn-sm btn-primary rounded-lg text-white font-medium"
                   onClick={openModal}
@@ -69,11 +71,6 @@ const MarkAssignmentModal = ({ assignment, handleDelete }) => {
                   Give Mark
                 </button>
               </div>
-            </div>
-            <div className="flex text-sm divide-x">
-              <button type="button" className="flex items-center px-2 py-1 pl-0 space-x-1">
-                <span onClick={() => handleDelete(assignment._id, assignment.email)} className='btn btn-xs btn-error text-white'>Remove</span>
-              </button>
             </div>
           </div>
         </div>

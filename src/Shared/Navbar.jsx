@@ -93,8 +93,8 @@ const Navbar = () => {
 
                                     <NavLink
                                         exact
-                                        to=""
-                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("") ? "text-white bg-indigo-600" : "text-gray-600"}`}
+                                        to="/myAssignment"
+                                        className={`px-3 py-2 mx-3 mt-2 rounded-md lg:mt-0 font-semibold ${isTabActive("/myAssignment") ? "text-white bg-indigo-600" : "text-gray-600"}`}
                                     >
                                         My Assignments
                                     </NavLink>

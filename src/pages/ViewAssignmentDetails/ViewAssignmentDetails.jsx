@@ -42,7 +42,10 @@ const ViewAssignmentDetails = () => {
         console.log(assignmentData);
 
         try {
-            const response = await axios.post('http://localhost:5000/myAssignment', assignmentData);
+            const response = await axios.post('https://online-group-study-server-nu.vercel.app/myAssignment', assignmentData, {
+                withCredentials: true
+            }
+            );
             // console.log('Assignment submitted successfully!', response.data);
             if (response.data.acknowledged) {
                 Swal.fire({

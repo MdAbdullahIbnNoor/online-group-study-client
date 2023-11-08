@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 const Faq = () => {
     return (
-        <section className="bg-indigo-500 text-white rounded-xl">
+        <section className="bg-indigo-500 text-white rounded-xl my-20">
             <div className="container mx-auto flex flex-col justify-center px-4 py-8 md:p-8">
                 <h2 className="text-3xl font-semibold sm:text-4xl">FAQ - Online Group Study</h2>
                 <p className="mt-4 mb-8">

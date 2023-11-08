@@ -7,36 +7,36 @@ const Footer = () => {
         <footer className="px-4 divide-y bg-indigo-600 text-gray-100 mb-0">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">
-                    <Link>
+                    <Link to='/'>
                         <img className="w-auto h-20" src={logo} alt="" />
                     </Link>
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
-                        <h3 className="tracki uppercase text-gray-50">Product</h3>
+                        <h3 className="tracki uppercase text-gray-50">Links</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Features</a>
+                                <Link rel="noopener noreferrer" to='/assignment'>Assignments</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Integrations</a>
+                                <Link rel="noopener noreferrer" to="/createassignment">Create Assignments</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Pricing</a>
+                                <Link rel="noopener noreferrer" to="/myAssignment">My Assignments</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">FAQ</a>
+                                <Link rel="noopener noreferrer" to="/submittedAssignment">Submitted Assignments</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
-                        <h3 className="tracki uppercase text-gray-50">Company</h3>
+                        <h3 className="tracki uppercase text-gray-50">Authentication</h3>
                         <ul className="space-y-1">
                             <li>
-                                <a rel="noopener noreferrer" href="#">Privacy</a>
+                                <Link rel="noopener noreferrer" to="/login">Login</Link>
                             </li>
                             <li>
-                                <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                                <Link rel="noopener noreferrer" to="/register">SignUp</Link>
                             </li>
                         </ul>
                     </div>

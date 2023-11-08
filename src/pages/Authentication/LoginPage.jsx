@@ -45,7 +45,7 @@ function LoginPage() {
     }
 
     return (
-        <div className="flex w-full max-w-md mx-auto overflow-hidden bg-gray-800 rounded-lg shadow-lg lg:max-w-6xl my-24 min-h-[600px]">
+        <div className="flex w-full max-w-md mx-auto overflow-hidden bg-gray-800 rounded-lg shadow-lg lg:max-w-6xl my-24 lg:min-h-[600px]">
             <div className="hidden bg-cover lg:block lg:w-1/2 object-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1949&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}></div>
 
             <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">

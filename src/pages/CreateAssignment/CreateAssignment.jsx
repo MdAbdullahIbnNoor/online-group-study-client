@@ -80,6 +80,7 @@ const CreateAssignment = () => {
                             value={formData.description}
                             onChange={handleChange}
                             className="w-full p-2 border rounded h-24"
+                            required
                         />
                     </div>
                     <div>
@@ -102,6 +103,7 @@ const CreateAssignment = () => {
                             value={formData.difficultyLevel}
                             onChange={handleChange}
                             className="w-full p-2 border rounded"
+                            required
                         >
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>

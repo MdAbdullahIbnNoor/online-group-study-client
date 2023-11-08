@@ -56,8 +56,8 @@ const CreateAssignment = () => {
 
 
     return (
-        <div className="flex space-x-4 max-w-screen-2xl mx-auto my-16">
-            <div className="w-1/2">
+        <div className="flex-col md:flex max-w-4xl space-x-4 md:max-w-screen-2xl mx-auto my-16">
+            <div className="md:w-1/2 mx-4">
                 <h2 className="text-2xl font-semibold mb-4">Create Assignment</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -142,7 +142,7 @@ const CreateAssignment = () => {
                     </button>
                 </form>
             </div>
-            <div className="w-1/2">
+            <div className="hidden md:w-1/2 ">
                 {/* You can place your image here using an <img> tag */}
                 <img
                     src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

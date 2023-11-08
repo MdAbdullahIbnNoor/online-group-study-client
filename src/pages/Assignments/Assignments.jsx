@@ -57,8 +57,8 @@ const Assignments = () => {
   };
 
   return (
-    <div className='mb-16'>
-      <div className="flex justify-end items-center my-5 mx-60 m">
+    <div className='mb-8 md:mb-16'>
+      <div className="flex justify-end items-center my-5 lg:mx-60">
         <label className="mr-4 font-medium">Filter by Difficulty Level:</label>
         <select className='border-2 border-indigo-600 rounded-md' value={selectedDifficulty} onChange={handleDifficultyChange}>
           <option value="">All</option>
@@ -67,14 +67,14 @@ const Assignments = () => {
           <option value="hard">Hard</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 mx-40">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 lg:mx-40">
         {currentAssignments.map((assignment) => (
           <div
             key={assignment._id}
-            className="bg-indigo-100 rounded-xl px-6 py-8 shadow-lg max-w-sm max-h-[400px]"
+            className="bg-indigo-100 rounded-xl px-6 py-8 shadow-lg w-96 md:max-w-md mx-auto max-h-[400px]"
           >
             <img
-              className="h-56 w-full object-cover mb-4"
+              className="h-56 w-full object-cover mb-4 "
               src={assignment.photoURL}
               alt={assignment.title}
             />

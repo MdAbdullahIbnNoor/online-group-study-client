@@ -52,18 +52,18 @@ const MarkAssignmentModal = ({ assignment }) => {
 
   return (
     <div>
-      <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
+      <li className="flex flex-col py-6 sm:flex-row sm:justify-between ">
         <div className="flex w-full space-x-2 sm:space-x-4">
           <img className="flex-shrink-0 object-cover w-24 h-24 rounded outline-none sm:w-32 sm:h-32" src={assignment.photoURL} alt="Polaroid camera" />
           <div className="flex flex-col justify-between w-full pb-4">
-            <div className="flex justify-between w-full pb-2 space-x-2">
+            <div className="flex-col md:flex md:justify-between w-full pb-2 space-x-2">
               <div className="space-y-1 w-4/5">
                 <h3 className="text-lg font-semibold leadi sm:pr-8">{assignment.title}</h3>
                 <p className="text-md ">PDF: {assignment.pdfLink}</p>
                 <p className="text-md">Additional info: {assignment.additionalText}</p>
                 <p className="text-md ">Submitted By: <span className='text-indigo-700'>{assignment.submittedBy}</span></p>
               </div>
-              <div className="text-right w-24">
+              <div className="justify-center md:text-right w-full md:w-24 mt-12">
                 <button
                   className="btn-sm btn-primary rounded-lg text-white font-medium"
                   onClick={openModal}

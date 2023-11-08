@@ -62,8 +62,8 @@ const UpdateAssignment = () => {
 };
 
 return (
-    <div className="flex space-x-4">
-        <div className="w-1/2">
+    <div className="md:flex space-x-4 my-8">
+        <div className="md:w-1/2 w-full px-10">
             <h2 className="text-2xl font-semibold mb-4">Create Assignment</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -148,12 +148,12 @@ return (
                 </button>
             </form>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2 w-3/4 mx-auto">
             {/* You can place your image here using an <img> tag */}
             <img
                 src={photoURL}
                 alt="Assignment Image"
-                className="w-[700px] h-[700px] rounded object-contain "
+                className="w-full md:w-[700px] md:h-[700px] rounded object-contain mx-auto"
             />
         </div>
     </div>

@@ -12,9 +12,6 @@ import ViewAssignmentDetails from "../pages/ViewAssignmentDetails/ViewAssignment
 import SubmittedAssignments from "../pages/SubmittedAssignment/SubmittedAssignment";
 import MyAssignmentPage from "../pages/MyAssignmentPage/MyAssignmentPage";
 import PrivateRoute from "./PrivateRoute";
-// import BookService from "../pages/BookService/BookService";
-// import Bookings from "../pages/Bookings/Bookings";
-// import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([

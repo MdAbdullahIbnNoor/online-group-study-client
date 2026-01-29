@@ -11,8 +11,12 @@ import UpdateAssignment from "../pages/UpdateAssignment/UpdateAssignment";
 import ViewAssignmentDetails from "../pages/ViewAssignmentDetails/ViewAssignmentDetails";
 import SubmittedAssignments from "../pages/SubmittedAssignment/SubmittedAssignment";
 import MyAssignmentPage from "../pages/MyAssignmentPage/MyAssignmentPage";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import ResourceLibrary from "../pages/ResourceLibrary/ResourceLibrary";
 import PrivateRoute from "./PrivateRoute";
 
+
+import { API_URL } from '../api/config';
 
 const router = createBrowserRouter([
     {
@@ -39,19 +43,19 @@ const router = createBrowserRouter([
             {
                 path: '/assignment',
                 element: <Assignments></Assignments>,
-                loader: () => fetch('https://online-group-study-server-nu.vercel.app/assignment')
+                loader: () => fetch(`${API_URL}/assignment`)
             },
             {
                 path: '/assignment/update/:id',
                 element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://online-group-study-server-nu.vercel.app/assignment/update/${params.id}`, {
+                loader: ({ params }) => fetch(`${API_URL}/assignment/update/${params.id}`, {
                     credentials: 'include', // Add this line to include credentials
                 })
             },
             {
                 path: '/assignment/:id',
                 element: <PrivateRoute><ViewAssignmentDetails></ViewAssignmentDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://online-group-study-server-nu.vercel.app/assignment/update/${params.id}`, {
+                loader: ({ params }) => fetch(`${API_URL}/assignment/${params.id}`, {
                     credentials: 'include', // Add this line to include credentials
                 })
             },
@@ -62,6 +66,14 @@ const router = createBrowserRouter([
             {
                 path: '/submittedAssignment',
                 element: <PrivateRoute><SubmittedAssignments></SubmittedAssignments></PrivateRoute>
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+            },
+            {
+                path: '/resources',
+                element: <ResourceLibrary></ResourceLibrary>
             },
         ]
     },

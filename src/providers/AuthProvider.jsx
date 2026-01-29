@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import axios from 'axios';
+import { API_URL } from "../api/config";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -22,7 +23,7 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const signUpWithGoogle = () =>{
+    const signUpWithGoogle = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
@@ -41,13 +42,13 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
             // if user exists then issue a token
             if (currentUser) {
-                axios.post('https://online-group-study-server-nu.vercel.app/jwt', loggedUser, { withCredentials: true })
+                axios.post(`${API_URL}/jwt`, loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })
             }
             else {
-                axios.post('https://online-group-study-server-nu.vercel.app/jwt', loggedUser, {
+                axios.post(`${API_URL}/jwt`, loggedUser, {
                     withCredentials: true
                 })
                     .then(res => {
@@ -64,7 +65,7 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         loading,
-        createUser, 
+        createUser,
         signIn,
         signUpWithGoogle,
         logOut

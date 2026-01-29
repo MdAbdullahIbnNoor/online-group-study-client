@@ -1,0 +1,155 @@
+[
+    {
+        "title": "Art Project",
+        "description": "Create an original artwork using any medium of your choice, focusing on color theory and composition.",
+        "marks": "75",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-05-10",
+        "photoURL": "https://images.unsplash.com/photo-1646617747567-0ced45137e0b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Music Composition",
+        "description": "Compose an original piece of music in any genre, including a basic lead sheet or MIDI file.",
+        "marks": "80",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-05-30",
+        "photoURL": "https://images.unsplash.com/photo-1703117387553-5d406704d157?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Medical Research Paper",
+        "description": "Conduct research on a modern medical condition and write a paper detailing symptoms and treatments.",
+        "marks": "70",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-02-10",
+        "photoURL": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Literature Essay",
+        "description": "Write an essay on a classic piece of literature and analyze its themes, motifs, and character arcs.",
+        "marks": "80",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-06-25",
+        "photoURL": "https://images.unsplash.com/photo-1718780276042-acf483f2b92c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Business Management Case Study",
+        "description": "Analyze a real business case study and prepare a report identifying SWOT analysis and growth strategies.",
+        "marks": "65",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-02-05",
+        "photoURL": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Astronomy Project",
+        "description": "Create a detailed model of the solar system and explain the gravitational relationship between planets.",
+        "marks": "70",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-01-25",
+        "photoURL": "https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Computer Science Coding Assignment",
+        "description": "Implement a Data Structure or Algorithm to solve a complex optimization problem in Python or C++.",
+        "marks": "80",
+        "difficultyLevel": "hard",
+        "dueDate": "2024-01-04",
+        "photoURL": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Geology Field Report",
+        "description": "Conduct fieldwork on local soil or rock formations and write a report on geographical erosion patterns.",
+        "marks": "75",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-03-10",
+        "photoURL": "https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Political Science Research",
+        "description": "Conduct political research on a recent international election campaign and its socio-economic impact.",
+        "marks": "99",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-01-20",
+        "photoURL": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending",
+        "pdfLink": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+        "additionalText": "Reference PDF for the political research guidelines.",
+        "submittedBy": "abdullah.csenoor.1996@gmail.com"
+    },
+    {
+        "title": "Chemistry Experiment",
+        "description": "Conduct a titration experiment and submit a lab report with quantitative data analysis.",
+        "marks": "75",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-06-20",
+        "photoURL": "https://images.unsplash.com/photo-1758685734156-3c5d35bae1d1?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Physical Education Journal",
+        "description": "Maintain a 30-day log of cardiovascular activity and reflections on personal metabolic health.",
+        "marks": "50",
+        "difficultyLevel": "easy",
+        "dueDate": "2024-05-05",
+        "photoURL": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Biology Research Project",
+        "description": "Conduct research on cellular biology or genetic mutation and submit a comprehensive report.",
+        "marks": "86",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-06-10",
+        "photoURL": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Advanced Web Application",
+        "description": "Develop a full-stack web application using React and Node.js for a fictional client project.",
+        "marks": "90",
+        "difficultyLevel": "hard",
+        "dueDate": "2024-04-20",
+        "photoURL": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Sociology Case Study",
+        "description": "Analyze urban societal shifts over the last decade and write a paper on demographic trends.",
+        "marks": "60",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-03-20",
+        "photoURL": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    },
+    {
+        "title": "Physics Lab Report",
+        "description": "Document the findings of a thermodynamics experiment including all formulas and raw data.",
+        "marks": "80",
+        "difficultyLevel": "medium",
+        "dueDate": "2024-04-10",
+        "photoURL": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=2000&auto=format&fit=crop",
+        "email": "ab.89noor@gmail.com",
+        "status": "pending"
+    }
+]
